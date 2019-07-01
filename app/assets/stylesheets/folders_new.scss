@@ -1,0 +1,35 @@
+
+
+   .folder-form{
+      width:1200px;
+      height: 130px;
+      background-color:#FFFFFF;
+      position:absolute;
+      top:230px; left: 100px;
+      position: fixed;
+      z-index:99999;
+      .folder-word{
+        position:absolute;
+        top: 0;
+        font-family: 'Londrina Shadow', cursive;
+        font-size: 25px;
+        padding-left:0px;
+        color:#66CDAA;
+      }
+      .name-form{
+        width:1000px;
+        height:80px;
+        margin-top: 30px;
+        margin-left:10px;
+        font-size:25px;
+      }
+      .folder-submit-btn{
+        padding: 15px 40px;
+        font-size: 1.2em;
+        background-color:pink;
+        color: #fff;
+        border-style: none;
+        position: absolute;
+        top:45px; left:1050px;
+      }
+    }

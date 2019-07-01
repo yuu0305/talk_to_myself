@@ -1,0 +1,30 @@
+.talk-header
+
+  .header-logo
+    = link_to 'TALK to MYSELF ' , '/folders', class:"logo"
+    = image_tag "https://img.icons8.com/wired/64/000000/edit.png" , class:"pen"
+
+  = link_to 'Sign_out', "/users/sign_out", method: :delete ,class: "sign_out"
+
+
+  = link_to new_folder_path do
+    = image_tag "https://img.icons8.com/carbon-copy/100/000000/create-new.png" , class:"new-folder"
+
+
+  = link_to "/flashcards" do
+    = image_tag "https://img.icons8.com/wired/64/000000/dictionary.png" , class:"new-folder"
+
+  .header-search
+    = form_tag('/folders/search',method: :GET) do
+      %input{placeholder:"検索したいフォルダー", type:"search", name:"keyword", class:"input-search"}
+      = button_tag type: "submit", class: "header-search-btn" do
+        = image_tag("https://img.icons8.com/ios/50/000000/search.png")
+
+.group-main
+  .select-group
+    .each-group
+      - @folder.each do |folder|
+        = link_to "#{folder.name}" , "/folders/#{folder.id}/talks" ,class:"fol"
+        .btn
+          = link_to "Edit" , edit_folder_path(folder.id) ,method: :GET , class: "edit-btn"
+          = link_to 'Delete', "/folders/#{folder.id}", method: :delete , class:"delete-btn" ,data: { confirm: '削除しますか？' }

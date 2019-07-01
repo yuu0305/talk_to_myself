@@ -1,0 +1,57 @@
+body{
+  background: #E0FFFF;
+  height: 100vh;
+  
+}
+
+
+
+.flash-main{
+    overflow: scroll;
+    position: relative;
+  .flash-field{
+    width:600px;
+    margin: 50px auto;
+    .flash-space{
+        min-height: 50px;
+        background: #FFF;
+        padding:20px;
+        .word{
+          font-size: 40px;
+          border-bottom: solid;
+          border-color: #333;
+          border-width: 1px;
+          position: relative;
+          .edit-btn{
+            color: pink;
+            font-size: 15px;
+            float:right;
+          }
+          .delete-btn{
+            color: pink;
+            font-size: 15px;
+            float:right;
+            padding-left:20px;
+          }
+          .answer-mark{
+          font-size:20px;
+          position: absolute;
+          top: 25px;right:10px;
+          cursor: pointer;
+          }
+          .answer{
+            font-size: 20px;
+            padding:20px;
+            min-height: 100px;
+            width: 500px;
+            background: #FFF;
+            .hide-mark{
+              font-size:15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+

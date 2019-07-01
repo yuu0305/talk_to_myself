@@ -1,0 +1,29 @@
+
+
+.flash-create{
+    margin:100px 400px;
+    display: inline-grid;
+  .flash-form{
+    display: inline-grid;
+    .flash-word{
+        font-family: 'Londrina Shadow', cursive;
+        font-size: 30px;
+    }
+
+    .word-form{
+        height: 30px;
+        width: 300px;
+    }
+    .answer-form{
+        height: 100px;
+        width: 600px;
+    }
+    .flash-submit-btn{
+      padding: 15px 40px;
+      font-size: 1.2em;
+      background-color:pink;
+      color: #fff;
+      border-style: none;
+    }
+}
+}

@@ -1,0 +1,42 @@
+.talk-header
+  .header-logo
+    = link_to 'TALK to MYSELF ' , '/folders', class:"logo"
+    = image_tag "https://img.icons8.com/wired/64/000000/edit.png" , class:"pen"
+
+    = link_to  "/flashcards/new" do
+      = image_tag "https://img.icons8.com/ios/50/000000/flashcards.png" , class: "new-word"
+
+.flash-main
+  - @flashcards.each do |flashcard|
+    .flash-field
+      .flash-space
+        .word
+          = flashcard.word
+          
+          = link_to 'Delete', flashcard_path(flashcard.id), method: :delete , class:"delete-btn" ,data: { confirm: '削除しますか？' }
+          = link_to "Edit" , edit_flashcard_path(flashcard.id) ,method: :GET , class: "edit-btn"
+          .answer-mark
+            ▼
+          .answer
+            = flashcard.answer
+
+-# .flash-main
+-#   .flash-field
+-#     .flash-space
+-#       .word
+-#         aaa
+-#         .answer-mark
+-#           ▼
+-#         .answer
+-#           aaaaaaaaaaaaaaaaaaaaaaa
+-#           aaaaaaaaaaaaaaaaaa
+-#           aaaaaa
+
+-#   .flash-field
+-#     .flash-space
+-#       .word
+-#         aaa
+-#         .answer-mark
+-#           ▼
+-#         .answer
+-#           bbbbbbb

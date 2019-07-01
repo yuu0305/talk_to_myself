@@ -1,0 +1,21 @@
+.container
+  Hello, Bro
+  .loader-container
+    %div
+    %div
+    %div
+    %div
+    %div
+  = link_to 'Talk to Myself ' , 'folders' , class: "tag"
+  .spinner-container
+    .spinner-path
+      %div
+      %div
+      %div
+      %div
+%svg{:version => "1.1", :xmlns => "http://www.w3.org/2000/svg"}
+  %defs
+    %filter#gooey
+      %fegaussianblur{:in => "SourceGraphic", :result => "blur", :stddeviation => "10"}
+      %fecolormatrix{:in => "blur", :mode => "matrix", :result => "goo", :values => "1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7"}
+      %feblend{:in => "SourceGraphic", :in2 => "goo"}

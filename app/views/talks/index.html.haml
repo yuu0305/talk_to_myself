@@ -1,0 +1,45 @@
+.notifications
+  - if flash[:alert]
+    %p= flash[:alert]
+
+
+.talk-header
+  %ul#menu
+    %li.menu
+      = image_tag "https://img.icons8.com/windows/32/000000/menu.png", style: "-webkit-user-select: none;" , class: "folder-list"
+      %ul.child
+        - @folders.each do |folder|
+          %li.children
+            = link_to  "#{folder.name}" , "/folders/#{folder.id}/talks" ,class:"each_folder"
+
+  .header-logo
+    = link_to 'TALK to MYSELF ' , '/folders' ,class:"logo"
+    = image_tag "https://img.icons8.com/wired/64/000000/edit.png" , class:"pen"
+
+
+  = link_to new_folder_path do
+    = image_tag "https://img.icons8.com/carbon-copy/100/000000/create-new.png" , class:"new-folder"
+
+  .header-search
+    = form_tag('/folders/talks/search',method: :GET) do
+      %input{placeholder:"検索したいメモ", type:"search", name:"keyword", class:"input-search"}
+      = button_tag type: "submit", class: "header-search-btn" do
+        = image_tag("https://img.icons8.com/ios/50/000000/search.png")
+
+
+.talk-main
+  .memos
+    - @talks.each do |talk|
+      .memo
+        -# = simple_format(talk.text)
+        = raw(talk.text.gsub(/\n/, "<br>"))
+        -# = sanitize(simple_format(talk.text), :tags => %w(p br))
+        = link_to 'Edit' , edit_folder_talk_path(params[:folder_id], talk.id) ,class: "edit-btn"
+        = link_to 'Delete', folder_talk_path(params[:folder_id], talk.id), method: :delete , class:"delete-btn" ,data: { confirm: '削除しますか？' }
+
+  .form
+    -# = form_with  local: true, class: 'form' do |f|
+    = form_for [@folder,@talk], class: 'form' do |f|
+      = f.label :"Talk to Myself ;" , class:"word"
+      = f.text_area :text, class:"talk-form" ,placeholder:"Let's talk to myself"
+      = f.submit "TALK" , class:"submit-btn"

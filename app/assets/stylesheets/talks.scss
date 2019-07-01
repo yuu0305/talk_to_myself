@@ -1,0 +1,86 @@
+
+.notifications{
+  background:#FF6633;
+  color:#FFF;
+  z-index: 9;
+}
+
+.talk-main{
+  background-color:#E0FFFF;
+  width:100%;
+  min-height:670px;
+  float:right;
+  position:relative;
+
+    .memos{
+      overflow: scroll;
+      margin-bottom:160px;
+      .memo{
+      font-size:25px;
+      color:gray;
+      width:750px;
+      padding:40px;
+      min-height:80px;
+      margin-top: 50px;
+      margin-left:300px;
+      background-color:#FFF;
+      position: relative;
+      
+
+
+      .edit-btn{
+        text-decoration: none;
+        font-size:15px;
+        color:pink;
+        position:absolute;
+        bottom:5px;right: 80px;
+      }
+      .delete-btn{
+
+        text-decoration: none;
+        font-size:15px;
+        color:pink;
+        position:absolute;
+        bottom:5px;right: 10px;
+      }
+      }
+    }
+
+    .form{
+      
+      width:100%;
+      height: 130px;
+      background-color:#FFFFFF;
+      position:absolute;
+      bottom: 0;
+      padding-left: 200px;
+      position: fixed;
+      z-index:99999;
+      label{
+        position:absolute;
+        top:0;
+      }
+      .word{
+        font-family: 'Londrina Shadow', cursive;
+        font-size: 25px;
+        padding-left:0px;
+        color:#66CDAA;
+      }
+      .talk-form{
+        width:1000px;
+        height:80px;
+        margin-top: 30px;
+        margin-left:10px;
+        font-size:20px;
+      }
+      .submit-btn{
+        padding: 15px 40px;
+        font-size: 1.2em;
+        background-color:pink;
+        color: #fff;
+        border-style: none;
+        position: absolute;
+        top:45px; left:1250px;
+      }
+    }
+}

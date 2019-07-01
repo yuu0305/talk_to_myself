@@ -1,0 +1,6 @@
+.edit-main
+  .form
+    = form_with model: @folder , local: true ,class: 'form' do |f|
+      = f.label :"Edit Folder Name" , class:"word"
+      = f.text_field :name, class:"talk-form" ,placeholder:"Edit Name"
+      = f.submit "Edit" , class:"submit-btn"

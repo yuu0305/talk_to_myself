@@ -1,0 +1,8 @@
+.edit-main
+  .form
+    -# = form_with  local: true, class: 'form' do |f|
+    = form_for [@folder,@talk], class: 'form' do |f|
+      = f.label :"Edit Talk" , class:"word"
+      = f.text_area :text, class:"talk-form" ,placeholder:"Let's talk to myself"
+      = f.submit "Edit" , class:"submit-btn"
+

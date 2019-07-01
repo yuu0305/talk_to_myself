@@ -1,0 +1,37 @@
+.log-in{
+  height:400px;
+  width:500px;
+  background: white;
+  margin: 30px auto 30px;
+  font-weight: bold;
+    h2{
+    font-size:20px;
+    text-align: center;
+    border-bottom:solid;
+    border-width: 0.5px;
+    border-color:#EEE;
+    padding: 20px 0 20px;
+    }
+    .field{
+    padding:20px 0 20px;
+    text-align: center;
+    border-bottom:solid;
+    border-width: 0.2px;
+    border-color:#EEE;
+    }
+
+
+    .actions{
+    text-align: center;
+    padding-top:20px;
+      input{
+        width:100px;
+        height: 50px;
+        background: #FF4500;
+        color:  #FFF;
+        font-weight: 900;
+        border-radius: 200px;
+        opacity: 0.8;
+      }
+    }
+}

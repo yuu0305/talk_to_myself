@@ -1,0 +1,6 @@
+.flash-create
+  = form_with model: @flashcard, local: true, class: 'flash-form' do |f|
+    = f.label :"Edit Flashcard" , class:"flash-word"
+    = f.text_field :word, class:"word-form" ,placeholder:"Word"
+    = f.text_area :answer, class:"answer-form" ,placeholder:"Answer"
+    = f.submit "OKAY" , class:"flash-submit-btn"

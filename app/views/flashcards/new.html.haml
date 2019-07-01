@@ -1,0 +1,15 @@
+.notifications
+  - if flash[:alert]
+    %p= flash[:alert]
+
+.talk-header
+  .header-logo
+    = link_to 'TALK to MYSELF ' , '/folders',class:"logo"
+    = image_tag "https://img.icons8.com/wired/64/000000/edit.png" , class:"pen"
+
+.flash-create
+  = form_with model: @flashcard, url: flashcards_path, local: true, class: 'flash-form' do |f|
+    = f.label :"Create New Flashcard" , class:"flash-word"
+    = f.text_field :word, class:"word-form" ,placeholder:"Word"
+    = f.text_area :answer, class:"answer-form" ,placeholder:"Answer"
+    = f.submit "OKAY" , class:"flash-submit-btn"

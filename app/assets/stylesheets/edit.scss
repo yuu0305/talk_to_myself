@@ -1,0 +1,30 @@
+.edit-main{
+  background: #E0FFFF;
+  height: 100vh;
+  .form{
+    position: relative;
+    .word{
+      font-family: 'Londrina Shadow', cursive;
+      font-size: 50px;
+      color:black;
+      position: absolute;
+      top:100px;left:200px;
+    }
+    .talk-form{
+      width:900px;
+      height:200px;
+      margin-top: 250px;
+      margin-left:200px;
+      font-size:20px;
+    }
+    .submit-btn{
+      padding: 15px 40px;
+      font-size: 1.2em;
+      background-color:pink;
+      color: #fff;
+      border-style: none;
+      position: absolute;
+      top:400px;right:160px;
+    }
+  }
+}

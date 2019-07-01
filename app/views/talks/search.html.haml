@@ -1,0 +1,37 @@
+.talk-header
+  %ul#menu
+    %li.menu
+      = image_tag "https://img.icons8.com/windows/32/000000/menu.png", style: "-webkit-user-select: none;" , class: "folder-list"
+      %ul.child
+        - @folders.each do |folder|
+          %li.children
+            = link_to  "#{folder.name}" , "/folders/#{folder.id}/talks" ,class:"each_folder"
+
+  .header-logo
+    = link_to 'TALK to MYSELF ' , '/folders' ,class:"logo"
+    = image_tag "https://img.icons8.com/wired/64/000000/edit.png" , class:"pen"
+
+
+  = link_to new_folder_path do
+    = image_tag "https://img.icons8.com/carbon-copy/100/000000/create-new.png" , class:"new-folder"
+
+  %form.header-search
+    = form_tag('/folders/talks/search',method: :GET) do
+      %input{placeholder:"検索したいメモ", type:"search", name:"keyword", class:"input-search"}
+      = button_tag type: "submit", class: "header-search-btn" do
+        = image_tag("https://img.icons8.com/ios/50/000000/search.png")
+
+
+.talk-main
+  -if(@talks.blank? || @talks.length == 0)
+    .no-result
+      = "該当するフォルダーがありません"
+  -else
+    .hit-result
+      ="検索結果 1-#{@talks.length}件"
+    .memos
+      - @talks.each do |talk|
+        .memo
+          = raw(talk.text.gsub(/\n/, "<br>"))
+          = link_to 'Edit' , edit_folder_talk_path(talk.folder_id, talk) ,class: "edit-btn"
+          = link_to 'Delete', folder_talk_path(talk.folder_id, talk), method: :delete , class:"delete-btn" ,data: { confirm: '削除しますか？' }
